@@ -58,6 +58,7 @@ config.csp = {
   connectSrc: [
     'self',
     'https://typeahead.npmjs.com/',
+    'https://api.github.com',
   ],
   fontSrc: [
     'self',
