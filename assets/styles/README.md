@@ -93,8 +93,7 @@ Refer to [typography.styl](/typography.styl) for type size, letter-spacing, and 
 sizes, spaces, and line heights should be avoided outside of
 [typography.styl](/typography.styl).
 
-See [Mozilla Developer Network —
-font-weight](https://developer.mozilla.org/en/CSS/font-weight) for further
+See [font-weight on MDN](https://developer.mozilla.org/en/CSS/font-weight) for further
 reading.
 
 ## Componentizing
@@ -137,12 +136,10 @@ generic components in very specific contexts.
 Page level overrides should be minimal and under a single page level class
 nest.
 
-```css
-.home-page {
-  .nav {
-    margin-top: 10px;
-  }
-}
+```styl
+.home-page
+  .nav
+    margin-top 10px
 ```
 
 ## Nesting
