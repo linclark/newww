@@ -136,7 +136,7 @@ generic components in very specific contexts.
 Page level overrides should be minimal and under a single page level class
 nest.
 
-```styl
+```stylus
 .home-page
   .nav
     margin-top 10px
