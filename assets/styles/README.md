@@ -211,30 +211,30 @@ example:
 ul.user-list li span a:hover { color: red; }
 ```
 
-
 Styles are resolved during the renderer's layout pass. The selectors are
 resolved right to left, exiting when it has been detected the selector does
-not match. Therefore, in this example every a tag has to be inspected to see
-if it resides inside a span and a list. As you can imagine this requires a
+not match. Therefore, in this example every `a` tag has to be inspected to see
+if it resides inside a `span` and a `li`. As you can imagine this requires a
 lot of DOM walking and and for large documents can cause a significant
-increase in the layout time. For further reading checkout:
-https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors
+increase in the layout time.
 
 If we know we want to give all `a` elements inside the `.user-list` red on
 hover we can simplify this style to:
 
-```css
-.user-list a:hover { color: red; }
+```stylus
+.user-list a:hover
+  color: red
 ```
 
 If we want to only style specific `a` elements inside `.user-list` we can
 give them a specific class:
 
-```css
-.user-list .link-primary:hover { color: red; }
+```stylus
+.user-list .link-primary:hover
+  color: red
 ```
 
-### Extend (instead of Mixins)
+### Use @extend instead of mixins
 
 Extending is feature common to LESS, Sass, and Stylus. It allows you to
 share styles between selectors without generating duplicate CSS. Go read
