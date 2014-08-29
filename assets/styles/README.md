@@ -11,17 +11,13 @@ Unlike Medium, our stylesheets are written in
 
 Classes and IDs are lowercase with words separated by a dash:
 
-#### Good
-
 ```css
+/* good */
 .user-profile {}
 .post-header {}
 #top-navigation {}
-```
 
-#### Bad
-
-```css
+/* bad */
 .userProfile {}
 .postheader {}
 #top_navigation {}
@@ -29,15 +25,11 @@ Classes and IDs are lowercase with words separated by a dash:
 
 Image file names are lowercase with words separated by a dash:
 
-#### Good
-
-```
+```sh
+# good
 icon-home.png
-```
 
-#### Bad
-
-```
+# bad
 iconHome.png
 icon_home.png
 iconhome.png
@@ -45,18 +37,14 @@ iconhome.png
 
 Image file names are prefixed with their usage.
 
-#### Good
-
-```
+```sh
+# good
 icon-home.png
 bg-container.jpg
 bg-home.jpg
 sprite-top-navigation.png
-```
 
-#### Bad
-
-```
+#bad
 home-icon.png
 container-background.jpg
 bg.jpg
@@ -74,18 +62,14 @@ When styling things, only use the color variables provided by
 [variables.styl](/variables.styl). When adding a color variable, using RGB
 and RGBA color units are preferred over hex, named, HSL, or HSLA values.
 
-#### Good
-
 ```css
+/* good */
 rgb(50, 50, 50);
 rgba(50, 50, 50, 0.2);
 rgba(black, 0.2);
 rgba(white, 0.2);
-```
 
-#### Bad
-
-```css
+/* bad */
 #FFF;
 #FFFFFF;
 hsl(120, 100%, 50%);
@@ -136,16 +120,12 @@ Also, namespacing should be made at a descriptive, functional level. Not at
 a page location level. For example, `.profile-header` could become
 `.header-hero-unit`.
 
-#### Bad
-
 ```css
-.nav, .home-nav, .profile-nav {}
-```
-
-#### Good
-
-```css
+/* good*/
 .nav, .nav-bar, .nav-list {}
+
+/* bad */
+.nav, .home-nav, .profile-nav {}
 ```
 
 ## Style Scoping
@@ -157,7 +137,7 @@ generic components in very specific contexts.
 Page level overrides should be minimal and under a single page level class
 nest.
 
-```CSS
+```css
 .home-page {
   .nav {
     margin-top: 10px;
@@ -171,10 +151,16 @@ Don't nest. Ever.
 
 Nesting makes it harder to tell at a glance where css selector optimizations can be made.
 
-#### Bad
-
-
 ```css
+/* good */
+.list-btn .btn-inner {
+  background: red;
+}
+.list-btn .btn-inner:hover {
+  .opacity(.4);
+}
+
+/* bad */
 .list-btn {
   .list-btn-inner {
     .btn {
@@ -185,18 +171,7 @@ Nesting makes it harder to tell at a glance where css selector optimizations can
     }
   }
 }
-```
 
-#### Good
-
-
-```css
-.list-btn .btn-inner {
-  background: red;
-}
-.list-btn .btn-inner:hover {
-  .opacity(.4);
-}
 ```
 
 ## Comments
@@ -208,18 +183,14 @@ Be wary of comments. They may be a sign of unnecessary complexity.
 Quotes for URLs and multi-word font names are optional in CSS, we find quotes to be
 visually clearer.
 
-#### Good
-
 ```css
+/* good */
 {
   background-image: url("/img/you.jpg");
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
 }
-```
 
-#### Bad
-
-```css
+/* bad */
 {
   background-image: url(/img/you.jpg);
   font-family: Helvetica Neue Light, Helvetica Neue, Helvetica, Arial;
