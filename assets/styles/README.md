@@ -87,7 +87,7 @@ important role than it once did. Different font weights will render
 typefaces specifically created for that weight, unlike the old days where
 `bold` could be just an algorithm to fatten a typeface. npm uses the
 numerical value of `font-weight` to enable the best representation of a
-typeface. The following table is a guide:
+typeface.
 
 Refer to [typography.styl](/typography.styl) for type size, letter-spacing, and line height. Raw
 sizes, spaces, and line heights should be avoided outside of
